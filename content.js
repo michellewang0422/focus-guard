@@ -1,25 +1,16 @@
-// Set a key to store time spent on this website
-const SITE_KEY = window.location.hostname;
-
 // Function to show a reminder
 function showReminder() {
   alert("You've spent a lot of time on this site. Consider taking a break!");
 }
 
-// Retrieve time spent from Chrome storage
-chrome.storage.local.get([SITE_KEY], (result) => {
-  let timeSpent = result[SITE_KEY] || 0;
+// Retrieve custom sites and thresholds from Chrome storage
+chrome.storage.local.get(["customSites", "timeSpent", "customThresholds"], (result) => {
+  const customSites = result.customSites || [];
+  const timeSpentOnSite = result.timeSpent && result.timeSpent[window.location.hostname] || 0;
+  const threshold = result.customThresholds && result.customThresholds[window.location.hostname] || 600; // Default to 600 seconds if no custom threshold
 
-  // Increment time every second
-  setInterval(() => {
-    timeSpent++;
-    
-    // Save updated time in storage
-    chrome.storage.local.set({ [SITE_KEY]: timeSpent });
-
-    // Show reminder if time exceeds 10 minutes (600 seconds)
-    if (timeSpent % 600 === 0) {
+  // Show reminder if time exceeds threshold
+  if (timeSpentOnSite >= threshold && timeSpentOnSite % threshold === 0) {
       showReminder();
-    }
-  }, 1000);
+  }
 });

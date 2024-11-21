@@ -17,6 +17,27 @@
         }
         .site-time {
             margin: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Align items to the left */
+        }
+        .delete-btn {
+            background-color: grey;  /* Grey background */
+            color: white;            /* White X */
+            border: none;            /* No border */
+            border-radius: 50%;      /* Circular shape */
+            /* width: 20px;             /* Size of the circle */
+            /* height: 20px;            Same height as width */
+            font-size: 14px;         /* Font size for the X */
+            /* line-height: 16px;       Center the X vertically inside circle */
+            /* text-align: center;      Center the X horizontally */
+            cursor: pointer;        /* Pointer cursor */
+            /* margin-left: 0;          Remove any margin to the left */
+            /* margin-right: 10px;      Space between delete button and site text */
+            padding: 2px 4px 2px 4px;
+        }
+        .delete-btn:hover {
+            background-color: darkgrey;  /* Darker grey on hover */
         }
         button {
             display: block;
@@ -36,6 +57,11 @@
     <h1>Focus Guard</h1>
     <div id="time-tracker"></div>
     <button id="reset-btn">Reset Time</button>
+    <hr>
+    <h3>Add Custom Site</h3>
+    <input type="text" id="new-site" placeholder="Enter site URL">
+    <input type="number" id="time-threshold" placeholder="Enter threshold (in minutes)">
+    <button id="add-site-btn">Add Site</button>
     <script src="popup.js"></script>
 </body>
 </html>
