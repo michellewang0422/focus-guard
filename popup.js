@@ -27,12 +27,18 @@ chrome.storage.local.get("timeSpent", (data) => {
     updateTimeDisplay(data.timeSpent || {});
 });
 
-// Reset time spent when button is clicked
+// Reset time spent for all sites to 0
 document.getElementById("reset-btn").addEventListener("click", () => {
-    chrome.runtime.sendMessage({ action: "resetTime" }, (response) => {
-        if (response.status === "reset") {
-            updateTimeDisplay({});
-        }
+    chrome.storage.local.get("timeSpent", (data) => {
+        const timeSpent = data.timeSpent || {};
+        Object.keys(timeSpent).forEach(site => {
+            timeSpent[site] = 0; // Reset time for each site
+        });
+
+        // Update storage with reset time
+        chrome.storage.local.set({ timeSpent }, () => {
+            updateTimeDisplay(timeSpent);
+        });
     });
 });
 
