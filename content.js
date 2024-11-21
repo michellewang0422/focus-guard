@@ -3,7 +3,7 @@ const SITE_KEY = window.location.hostname;
 
 // Function to show a reminder
 function showReminder() {
-  alert("You've spent a lot of time on this site. Consider taking a break!");
+  alert("You've met your time limit on this site!");
 }
 
 // Retrieve time spent from Chrome storage
