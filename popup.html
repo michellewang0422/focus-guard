@@ -19,34 +19,47 @@
             margin: 10px 0;
             display: flex;
             align-items: center;
-            justify-content: space-between; /* Align items to the left */
-        
+            justify-content: space-between;
         }
         .delete-btn {
-            background-color: grey;  /* Grey background */
-            color: white;            /* White X */
-            border: none;            /* No border */
-            border-radius: 50%;      /* Circular shape */
-            font-size: 14px;         /* Font size for the X */
-            cursor: pointer;        /* Pointer cursor */
-            padding: 2px 4px 2px 4px;
-        }
-        .delete-btn:hover {
-            background-color: darkgrey;  /* Darker grey on hover */
-        }
-        button {
-            display: block;
-            margin: 10px 0;
-            padding: 5px 10px;
-            background-color: #4CAF50;
+            background-color: rgb(150, 150, 150); 
             color: white;
             border: none;
+            border-radius: 50%;
+            font-size: 14px;
+            cursor: pointer;
+            padding: 2px 4px;
+        }
+        .delete-btn:hover {
+            background-color: rgb(88, 88, 88);
+        }
+        button {
+            margin: 10px 0;
+            background-color: rgb(150, 150, 150);
+            color: white;
+            border: none;
+            border-radius: 15px;
+            padding: 5px 10px;
+            font-size: 12px;
             cursor: pointer;
         }
         button:hover {
-            background-color: #45a049;
+            background-color: rgb(88, 88, 88);
         }
-    </style>
+        /* Style for the reset button */
+        #reset-btn {
+            background-color: rgb(150, 150, 150);
+            color: white;
+            border: none;
+            border-radius: 15px;
+            padding: 5px 10px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        #reset-btn:hover {
+            background-color: rgb(88, 88, 88);
+        }
+    </style>    
 </head>
 
 <body>
@@ -58,7 +71,7 @@
     <hr>
     <h3>Add Custom Site</h3>
     <input type="text" id="new-site" placeholder="Enter site URL">
-    <input type="number" id="time-threshold" placeholder="Enter threshold (in minutes)">
+    <input type="number" id="time-threshold" placeholder="Enter time (in min)">
     <button id="add-site-btn">Add Site</button>
     <script src="popup.js"></script>
 </body>
