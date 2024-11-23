@@ -11,11 +11,11 @@
   "content_scripts": [
     {
       "matches": ["*://*.facebook.com/*", "*://*.youtube.com/*", "*://*.instagram.com/*"],
-      "js": ["content.js"]
+      "js": ["scripts/content.js"]
     }
   ],
   "action": {
-    "default_popup": "popup.html",
+    "default_popup": "popup/popup.html",
     "default_icon": {
       
 

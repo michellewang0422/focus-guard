@@ -35,7 +35,7 @@
         }
         button {
             margin: 10px 0;
-            background-color: rgb(150, 150, 150);
+            background-color: rgb(70, 130, 180);
             color: white;
             border: none;
             border-radius: 15px;
@@ -44,11 +44,11 @@
             cursor: pointer;
         }
         button:hover {
-            background-color: rgb(88, 88, 88);
+            background-color: rgb(50, 100, 150);
         }
         /* Style for the reset button */
         #reset-btn {
-            background-color: rgb(150, 150, 150);
+            background-color: rgb(70, 130, 180);
             color: white;
             border: none;
             border-radius: 15px;
@@ -57,7 +57,7 @@
             cursor: pointer;
         }
         #reset-btn:hover {
-            background-color: rgb(88, 88, 88);
+            background-color: rgb(50, 100, 150);
         }
     </style>    
 </head>
@@ -65,14 +65,14 @@
 <body>
     <h1>Focus Guard</h1>
     <hr>
-    <h3>Distraction Site Time Tracker</h3>
+    <h4>Distraction Site Time Tracker</h4>
     <div id="time-tracker"></div>
     <button id="reset-btn">Reset Time</button>
     <hr>
-    <h3>Add Custom Site</h3>
+    <h4>Add Custom Site</h4>
     <input type="text" id="new-site" placeholder="Enter site URL">
     <input type="number" id="time-threshold" placeholder="Enter time (in min)">
     <button id="add-site-btn">Add Site</button>
-    <script src="popup.js"></script>
+    <script src="./popup.js"></script>
 </body>
 </html>
